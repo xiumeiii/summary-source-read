@@ -2643,6 +2643,9 @@ function initLifecycle (vm) {
   vm.$children = [];
   vm.$refs = {};
 
+  vm.$children = [];
+  vm.$refs = {};
+
   vm._watcher = null;
   vm._inactive = null;
   vm._directInactive = false;
