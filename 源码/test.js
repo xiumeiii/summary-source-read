@@ -27,10 +27,10 @@
 //   });
 // }
 
-let a1 = Symbol.for('abc');
-let obj = {
-  [a1]: 123,
-  abc: 234,
-  c: 345
-}
-console.log(obj); 
+// let a1 = Symbol.for('abc');
+// let obj = {
+//   [a1]: 123,
+//   abc: 234,
+//   c: 345
+// }
+// console.log(obj); 
