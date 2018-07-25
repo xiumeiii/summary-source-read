@@ -121,3 +121,6 @@ $ git tag (查看已有的tag标签)
 
 
 ---
+
+[git 搜索技巧-语法](https://help.github.com/articles/understanding-the-search-syntax/)
+[github代码搜索技巧](http://blog.sina.com.cn/s/blog_4e60b09d0102vcso.html)
