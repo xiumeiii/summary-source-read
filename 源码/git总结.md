@@ -44,6 +44,18 @@ git reset --hard commitId (回退到commitId这个版本)
 如果要撤销commit内容--前提是在push之前，可以利用此操作
 ```
 
+- git 拉取dev的以前的某个commitId版本为新分支dev_new，然后在新分支上添加功能
+
+```javascript
+1. 新建个文件夹，重新拉取dev代码 （git clone -b dev url）
+2. git checkout -b dev_new （创建dev_new分支，然后切换到dev_new分支）或者 （分2步：1. git branch dev_new、2. git checkout dev_new）
+3. 这时候查看分支情况：git branch （dev 和 *dev_new 2个分支，并且*号代表当前操作的分支），这时候在dev_new分支上就可以操作了
+4. 查看dev_new分支上的git log --pretty=oneline 提交记录（和dev的一样）
+5. 回退dev_new分支到你需要的commitId的版本，git reset --hard commitId
+6. 然后随便修改个文件，git add .、git commit -m "新建dev_new分支"、git push origin dev_new
+7. 完成
+```
+
 
 - 打tag 标签
 
@@ -75,7 +87,9 @@ $ git tag (查看已有的tag标签)
   git push origin master
   ```
 
-
+- git 命令遇到的一些问题
+1. git clone出现fatal: unable to access 'https://': SSL certificate problem: self signed certificate in c
+> git config --global http.sslVerify false 再不行 执行：env GIT_SSL_NO_VERIFY=true git clone url(env:是一个外部命令，程序文件/bin/env，列出所有环境变量及其赋值。)
 
 ### github的使用技巧
 
@@ -124,3 +138,5 @@ $ git tag (查看已有的tag标签)
 
 [git 搜索技巧-语法](https://help.github.com/articles/understanding-the-search-syntax/)
 [github代码搜索技巧](http://blog.sina.com.cn/s/blog_4e60b09d0102vcso.html)
+
+https://github.com/MMF-FE/vue-svgicon
